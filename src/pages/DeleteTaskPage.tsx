@@ -1,44 +1,45 @@
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const DeleteTaskPage = () => {
-  const { taskId } = useParams();
-  const navigate = useNavigate();
-  const [task, setTask] = useState(null);
+  const { taskId } = useParams()
+  const navigate = useNavigate()
+  const [task, setTask] = useState(null)
 
-  // Fetch task details on component mount
   useEffect(() => {
     const fetchTask = async () => {
       try {
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem('token')
         const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/tasks/${taskId}`, {
           headers: { Authorization: `Bearer ${token}` },
-        });
-        setTask(response.data);
-      } catch (error) {
-        console.error('Error fetching task:', error);
-        navigate('/tasks'); // Redirect if the task doesn't exist
+        })
+        setTask(response.data)
+      }
+      catch (error) {
+        console.error('Error fetching task:', error)
+        navigate('/tasks')
       }
     };
-    fetchTask();
-  }, [taskId, navigate]);
+    fetchTask()
+  }, [taskId, navigate])
 
   // Handle task deletion
   const handleDelete = async () => {
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem('token')
       await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/tasks/${taskId}`, {
         headers: { Authorization: `Bearer ${token}` },
-      });
-      navigate('/tasks'); // Redirect to the task list after deletion
-    } catch (error) {
-      console.error('Error deleting task:', error);
+      })
+      navigate('/tasks')
+    }
+    catch (error) {
+      console.error('Error deleting task:', error)
     }
   };
 
   if (!task) {
-    return <div>Loading...</div>; // Show a loading message while fetching task details
+    return <div>Loading...</div>
   }
 
   return (
@@ -61,7 +62,7 @@ const DeleteTaskPage = () => {
         <button onClick={() => navigate('/tasks')} className={"button button-cancel"}>Cancel</button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DeleteTaskPage;
+export default DeleteTaskPage

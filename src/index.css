@@ -1,4 +1,5 @@
 /* Reset and basic styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +24,7 @@ a:hover {
 }
 
 /* Container for centering content */
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -45,6 +47,7 @@ h2 {
 }
 
 /* Forms */
+
 form {
   display: flex;
   flex-direction: column;
@@ -84,6 +87,7 @@ form button:hover {
 }
 
 /* Buttons */
+
 button,
 .button {
   padding: 10px 15px;
@@ -126,6 +130,7 @@ button:hover,
 }
 
 /* Navigation */
+
 nav {
   display: flex;
   justify-content: right;
@@ -147,6 +152,7 @@ nav a:hover {
 }
 
 /* Task List */
+
 .task-list {
   list-style: none;
   padding: 0;
@@ -181,6 +187,7 @@ nav a:hover {
 }
 
 /* Utility Classes */
+
 .text-center {
   text-align: center;
 }

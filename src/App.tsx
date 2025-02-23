@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import TasksPage from './pages/TasksPage';
-import CreateTaskPage from './pages/CreateTaskPage';
-import EditTaskPage from './pages/EditTaskPage';
-import DeleteTaskPage from './pages/DeleteTaskPage';
-import Navbar from './components/Navbar';
-import {AppContext} from './context/AppContext'
+import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import LoginPage from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
+import TasksPage from './pages/TasksPage'
+import CreateTaskPage from './pages/CreateTaskPage'
+import EditTaskPage from './pages/EditTaskPage'
+import DeleteTaskPage from './pages/DeleteTaskPage'
+import Navbar from './components/Navbar'
+import { AppContext } from './context/AppContext'
 
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token'));
+  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token'))
 
   return (
     <AppContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
@@ -29,5 +29,5 @@ export default function App() {
         </Routes>
       </Router>
     </AppContext.Provider>
-  );
+  )
 }

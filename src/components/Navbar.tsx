@@ -1,16 +1,16 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { AppContext } from '../context/AppContext';
-import {useContext} from "react";
+import { Link, useNavigate } from 'react-router-dom'
+import { AppContext } from '../context/AppContext'
+import { useContext } from "react"
 
 const Navbar = () => {
-  const navigate = useNavigate();
-  const isAuthenticated = !!localStorage.getItem('token');
-  const { setIsAuthenticated } = useContext(AppContext);
+  const navigate = useNavigate()
+  const isAuthenticated = !!localStorage.getItem('token')
+  const { setIsAuthenticated } = useContext(AppContext)
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    setIsAuthenticated(false);
-    navigate('/login');
+    localStorage.removeItem('token')
+    setIsAuthenticated(false)
+    navigate('/login')
   };
 
   return (
@@ -27,7 +27,7 @@ const Navbar = () => {
         </>
       )}
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

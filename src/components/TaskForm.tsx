@@ -1,22 +1,22 @@
-import axios from 'axios';
-import { useState } from 'react';
+import axios from 'axios'
+import { useState } from 'react'
 
 interface TaskFormProps {
-  task?: { id: string; title: string; description: string }; // For editing a task
-  onSuccess: () => void; // Callback after successful submission
+  task?: { id: string; title: string; description: string }
+  onSuccess: () => void
 }
 
 const TaskForm = ({ task, onSuccess }: TaskFormProps) => {
-  const [title, setTitle] = useState(task?.title || '');
-  const [description, setDescription] = useState(task?.description || '');
-  const [error, setError] = useState('');
+  const [title, setTitle] = useState(task?.title || '')
+  const [description, setDescription] = useState(task?.description || '')
+  const [error, setError] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const token = localStorage.getItem('token');
+    e.preventDefault()
+    const token = localStorage.getItem('token')
     if (!token) {
-      setError('You are not authenticated.');
-      return;
+      setError('You are not authenticated.')
+      return
     }
 
     try {
@@ -26,21 +26,22 @@ const TaskForm = ({ task, onSuccess }: TaskFormProps) => {
           `${import.meta.env.VITE_BACKEND_URL}/tasks/${task.id}`,
           { title, description },
           { headers: { Authorization: `Bearer ${token}` } }
-        );
-      } else {
+        )
+      }
+      else {
         // Create new task
         await axios.post(
           `${import.meta.env.VITE_BACKEND_URL}/tasks`,
           { title, description },
           { headers: { Authorization: `Bearer ${token}` } }
-        );
+        )
       }
       onSuccess(); // Refresh task list or close modal
-    } catch (error) {
-      setError('Failed to save task. Please try again.');
-      console.error('Task submission error:', error);
     }
-  };
+    catch (error) {
+      setError('Failed to save task. Please try again.')
+    }
+  }
 
   return (
     <div className="container">
@@ -67,7 +68,7 @@ const TaskForm = ({ task, onSuccess }: TaskFormProps) => {
         <button type="submit">{task ? 'Update Task' : 'Create Task'}</button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default TaskForm;
+export default TaskForm
