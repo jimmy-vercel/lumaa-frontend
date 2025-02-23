@@ -16,7 +16,10 @@ const Navbar = () => {
   return (
     <nav>
       {isAuthenticated ? (
-        <button onClick={handleLogout}>Logout</button>
+        <>
+          <Link to="/tasks">My tasks</Link>
+          <button onClick={handleLogout}>Logout</button>
+        </>
       ) : (
         <>
           <Link to="/login">Login</Link>

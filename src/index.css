@@ -80,7 +80,8 @@ form button:hover {
 }
 
 /* Buttons */
-button {
+button,
+.button {
   padding: 10px 15px;
   background-color: #007bff;
   color: #fff;
@@ -89,9 +90,32 @@ button {
   cursor: pointer;
   font-size: 16px;
 }
-
 button:hover {
   background-color: #0056b3;
+}
+
+.button-edit {
+  background-color: #00ab16;
+  color: white;
+}
+.button-edit:hover {
+  background-color: #00ab16;
+}
+
+.button-delete {
+  background-color: #c82333;
+  color: white;
+}
+.button-delete:hover {
+  background-color: #c82333;
+}
+
+.button-cancel {
+  background-color: #666;
+  color: white;
+}
+.button-cancel:hover {
+  background-color: #666;
 }
 
 /* Navigation */
@@ -139,6 +163,14 @@ nav a:hover {
 
 .task-list li button:hover {
   background-color: #c82333;
+}
+
+.task-list .title,
+.task-list .description {
+  width: 200px;
+}
+.task-list .status {
+  width: 100px;
 }
 
 /* Utility Classes */
