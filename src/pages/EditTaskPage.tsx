@@ -43,7 +43,7 @@ const EditTaskPage = () => {
   };
 
   return (
-    <div className={"container"}>
+    <div className="container container-small">
       <h2>Edit task</h2>
       <form onSubmit={handleSubmit}>
         <div>

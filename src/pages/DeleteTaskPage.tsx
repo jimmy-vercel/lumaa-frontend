@@ -42,7 +42,7 @@ const DeleteTaskPage = () => {
   }
 
   return (
-    <div>
+    <div className="container container-small">
       <h2>Delete Task</h2>
       <p>Are you sure you want to delete this task?</p>
       <div>
@@ -54,9 +54,12 @@ const DeleteTaskPage = () => {
       <div>
         <strong>Status:</strong> {task.isComplete ? 'Completed' : 'Incomplete'}
       </div>
-      <button onClick={handleDelete} className={"button button-delete"}>Delete</button>
-      &nbsp;&nbsp;
-      <button onClick={() => navigate('/tasks')} className={"button button-cancel"}>Cancel</button>
+      <br />
+      <div>
+        <button onClick={handleDelete} className={"button button-delete"}>Delete</button>
+        &nbsp;&nbsp;
+        <button onClick={() => navigate('/tasks')} className={"button button-cancel"}>Cancel</button>
+      </div>
     </div>
   );
 };

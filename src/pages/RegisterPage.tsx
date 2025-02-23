@@ -14,7 +14,7 @@ const RegisterPage = () => {
   }, [isAuthenticated, navigate]);
 
   return (
-    <div className="container">
+    <div className="container container-small">
       <Register />
     </div>
   );

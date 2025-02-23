@@ -26,7 +26,7 @@ const CreateTaskPage = () => {
   };
 
   return (
-    <div>
+    <div className="container container-small">
       <h2>Create new task</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -52,7 +52,7 @@ const CreateTaskPage = () => {
               checked={isComplete}
               onChange={(e) => setIsComplete(e.target.checked)}
             />
-            Completed
+            &nbsp; Completed
           </label>
         </div>
         <button type="submit">Create</button>

@@ -20,7 +20,7 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container container-small">
       <Login />
     </div>
   );

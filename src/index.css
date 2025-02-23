@@ -8,7 +8,7 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: #fff;
   color: #333;
   padding: 20px;
 }
@@ -30,10 +30,14 @@ a:hover {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dddddd;
+}
+.container-small {
+  max-width: 400px;
 }
 
 h2 {
-  background: #ccc;
+  background: #f0f0f0;
   padding: 10px;
   margin-bottom: 20px;
   text-align: center;
