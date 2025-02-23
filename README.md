@@ -4,6 +4,10 @@
   ```
   $ npm install
   ```
+- Create a .env file on the root directory and put these variables into it (Update them with your own values).
+  ```
+  VITE_BACKEND_URL=http://localhost:3000
+  ```
 - Run the servers on your local
     - Run the development server
       ```
