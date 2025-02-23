@@ -1,6 +1,7 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -15,10 +16,12 @@ const Register = () => {
         'username': username,
         'password': password,
       });
+      console.log(response)
       if (response.data.token) {
-        localStorage.setItem('token', response.data.token);
-        navigate('/tasks');
+        //localStorage.setItem('token', response.data.token);
+        navigate('/login');
       }
+      navigate('/login');
     } catch (error) {
       setError('Registration failed. Please try again.');
       console.error('Registration error:', error);
