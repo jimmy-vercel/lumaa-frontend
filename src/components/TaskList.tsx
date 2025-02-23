@@ -13,7 +13,7 @@ const TaskList = () => {
       setTasks(response.data);
     };
     fetchTasks();
-  }, []);
+  }, [tasks]);
 
   return (
     <ul className="task-list">
