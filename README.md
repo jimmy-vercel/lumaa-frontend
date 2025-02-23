@@ -9,7 +9,7 @@
       ```
       $ npm run dev
       ```
-    - Run the tests with coverage
+    - Run the tests
       ```
       $ npm run test           # run the tests
       $ npm run test:watch     # run the tests in watch mode
