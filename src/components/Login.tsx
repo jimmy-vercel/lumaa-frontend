@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 
 const Login = () => {
@@ -58,6 +58,9 @@ const Login = () => {
           required
         />
         <button type="submit">Login</button>
+        <div className={"text-center"}>
+          <Link to="/register">Register</Link>
+        </div>
       </form>
     </div>
   );

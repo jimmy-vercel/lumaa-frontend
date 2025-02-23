@@ -71,7 +71,7 @@ const EditTaskPage = () => {
               checked={isComplete}
               onChange={(e) => setIsComplete(e.target.checked)}
             />
-            Completed
+            &nbsp; Completed
           </label>
         </div>
         <button type="submit">Update</button>

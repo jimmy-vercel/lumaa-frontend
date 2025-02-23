@@ -93,9 +93,12 @@ button,
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  text-decoration: none;
 }
-button:hover {
+button:hover,
+.button:hover {
   background-color: #0056b3;
+  text-decoration: none;
 }
 
 .button-edit {
@@ -103,7 +106,7 @@ button:hover {
   color: white;
 }
 .button-edit:hover {
-  background-color: #00ab16;
+  background-color: #007310;
 }
 
 .button-delete {
@@ -111,7 +114,7 @@ button:hover {
   color: white;
 }
 .button-delete:hover {
-  background-color: #c82333;
+  background-color: #930d1a;
 }
 
 .button-cancel {

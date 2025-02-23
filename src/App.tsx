@@ -15,7 +15,9 @@ export default function App() {
   return (
     <AppContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
       <Router>
-        <Navbar />
+        {isAuthenticated && (
+          <Navbar />
+        )}
         <Routes>
           <Route path="/login" element={isAuthenticated ? <Navigate to="/tasks" /> : <LoginPage />} />
           <Route path="/register" element={isAuthenticated ? <Navigate to="/tasks" /> : <RegisterPage />} />
